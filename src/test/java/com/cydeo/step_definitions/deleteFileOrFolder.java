@@ -1,5 +1,6 @@
 package com.cydeo.step_definitions;
 
+import com.cydeo.pages.DashBoardPage;
 import com.cydeo.pages.LoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -7,6 +8,7 @@ import io.cucumber.java.en.When;
 
 public class deleteFileOrFolder {
     LoginPage loginPage=new LoginPage();
+    DashBoardPage dashBoardPage=new DashBoardPage();
 
     @Given("user on the dashboard page")
     public void user_on_the_dashboard_page() {
@@ -14,8 +16,8 @@ public class deleteFileOrFolder {
     }
 
     @When("the user clicks the {string} module")
-    public void the_user_clicks_the_module(String string) {
-
+    public void the_user_clicks_the_module(String module) {
+    dashBoardPage.clickModule(module);
     }
     @When("user click action-icon from any file on the page")
     public void user_click_action_icon_from_any_file_on_the_page() {
